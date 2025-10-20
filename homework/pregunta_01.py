@@ -14,8 +14,9 @@ def pregunta_01():
 
     """
     suma = 0
-    with open('https://github.com/2025-2-fundamentos/LAB-01-python-basico-DarthKar/blob/4f046d2c0e1789f28f56f720802a8ec2edfa75f7/files/input/data.csv') as archivo:
+    with open('files/input/data.csv') as archivo:
         for linea in archivo.readlines():
             suma+=int(linea.split()[1])
     return suma
+
 
