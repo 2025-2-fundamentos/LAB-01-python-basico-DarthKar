@@ -17,7 +17,7 @@ def pregunta_02():
     """
     lista = {}
     rta = []
-    with open('files\input\data.csv') as archivo:
+    with open(r'files\input\data.csv') as archivo:
         for linea in archivo.readlines():
             l = linea.split()
             if l[0] not in lista:

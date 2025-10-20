@@ -19,3 +19,4 @@ def pregunta_01():
             suma+=int(linea.split()[1])
     return suma
 
+print(pregunta_01())
