@@ -26,7 +26,7 @@ def pregunta_09():
     """
     diccionario = {}
     rta = []
-    with open('files\input\data.csv') as archivo:
+    with open('files/input/data.csv') as archivo:
         for linea in archivo.readlines():
             l = linea.split()
             entrada = l[4].split(',')

@@ -16,7 +16,7 @@ def pregunta_12():
 
     """
     di = {}
-    with open(r'files\input\data.csv') as archivo:
+    with open('files/input/data.csv') as archivo:
         for linea in archivo.readlines():
             l = linea.split()
             letra = l[0]
