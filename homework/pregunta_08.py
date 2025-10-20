@@ -27,3 +27,18 @@ def pregunta_08():
      (9, ['A', 'B', 'C', 'E'])]
 
     """
+    diccionario = {}
+    rta = []
+    with open('files\input\data.csv') as archivo:
+        for linea in archivo.readlines():
+            l = linea.split()
+            if l[1] not in diccionario:
+                diccionario[l[1]] = []
+            if l[0] not in diccionario[l[1]]:
+                diccionario[l[1]].append(l[0])
+
+    for cosa in diccionario:
+        rta.append((int(cosa), sorted(diccionario[cosa])))
+
+    return sorted(rta)
+

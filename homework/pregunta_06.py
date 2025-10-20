@@ -24,5 +24,19 @@ def pregunta_06():
      ('hhh', 0, 9),
      ('iii', 0, 9),
      ('jjj', 5, 17)]
-
     """
+
+    diccionario = {}
+    rta = []
+    with open('files\input\data.csv') as archivo:
+        for linea in archivo.readlines():
+            l = linea.split()
+            entrada = l[4].split(',')
+            for _ in entrada:
+                dato, valor = _.split(':')
+                if dato not in diccionario:
+                    diccionario[dato] = []
+                diccionario[dato].append(int(valor))
+        for cosa in diccionario:
+            rta.append((cosa, min(diccionario[cosa]), max(diccionario[cosa])))
+        return sorted(rta)

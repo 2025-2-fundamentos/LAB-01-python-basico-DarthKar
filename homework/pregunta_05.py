@@ -15,3 +15,21 @@ def pregunta_05():
     [('A', 9, 2), ('B', 9, 1), ('C', 9, 0), ('D', 8, 3), ('E', 9, 1)]
 
     """
+    lista = {}
+    rta = []
+    with open('files\input\data.csv') as archivo:
+        for linea in archivo.readlines():
+            l = linea.split()
+            if l[0] not in lista:
+               lista[l[0]] = []
+            lista[l[0]].append(int(l[1]))
+    for letra in lista:
+        rta.append((letra, max(lista[letra]), min(lista[letra])))
+
+
+    return sorted(rta)
+
+
+            
+
+        

@@ -11,7 +11,6 @@ def pregunta_07():
     Retorne una lista de tuplas que asocien las columnas 0 y 1. Cada tupla
     contiene un valor posible de la columna 2 y una lista con todas las letras
     asociadas (columna 1) a dicho valor de la columna 2.
-
     Rta/
     [(0, ['C']),
      (1, ['E', 'B', 'E']),
@@ -25,3 +24,20 @@ def pregunta_07():
      (9, ['A', 'B', 'E', 'A', 'A', 'C'])]
 
     """
+    diccionario = {}
+    rta = []
+    with open('files\input\data.csv') as archivo:
+        for linea in archivo.readlines():
+            l = linea.split()
+            if l[1] not in diccionario:
+                diccionario[l[1]] = []
+            diccionario[l[1]].append(l[0])
+    for cosa in diccionario:
+        rta.append((int(cosa), diccionario[cosa]))
+    return sorted(rta)
+
+        
+
+
+
+

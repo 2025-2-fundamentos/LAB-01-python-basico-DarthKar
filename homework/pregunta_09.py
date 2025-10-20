@@ -24,3 +24,16 @@ def pregunta_09():
      'jjj': 18}}
 
     """
+    diccionario = {}
+    rta = []
+    with open('files\input\data.csv') as archivo:
+        for linea in archivo.readlines():
+            l = linea.split()
+            entrada = l[4].split(',')
+            for dato in entrada:
+                i, _ = dato.split(':')
+                if i not in diccionario:
+                    diccionario[i] = 0
+                diccionario[i] += 1
+    return diccionario
+

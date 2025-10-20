@@ -15,3 +15,16 @@ def pregunta_12():
     {'A': 177, 'B': 187, 'C': 114, 'D': 136, 'E': 324}
 
     """
+    di = {}
+    with open('files\input\data.csv') as archivo:
+        for linea in archivo.readlines():
+            l = linea.split()
+            letra = l[0]
+            if letra not in di:
+                di[letra] = 0
+            entrada = l[4].split(',')
+            for _ in entrada:
+                clave, valor = _.split(':')
+                di[letra]+=int(valor)
+            
+    return dict(sorted(di.items()))
